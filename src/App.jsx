@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-        <video src="/public/Assets/Leo_Cosh_Voices_Mobile_Demo_Reel_2025.mp4" controls></video>
+        <video src="/Assets/Leo_Cosh_Voices_Mobile_Demo_Reel_2025.mp4" controls></video>
     </>
   );
 }
