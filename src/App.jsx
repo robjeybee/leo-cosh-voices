@@ -1,12 +1,21 @@
-import { useState } from "react";
-import "./App.css";
+import Header from "./components/Header";
+import Showreel from "./components/Showreel";
+import Work from "./components/Work";
+import HighlightBanner from "./components/HighlightBanner";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-        <video src="/Assets/Leo_Cosh_Voices_Mobile_Demo_Reel_2025.mp4" controls></video>
+      <Header />
+      <Showreel />
+      <Work />
+      <HighlightBanner />
+      <About />
+      <Contact />
+      <Footer />
     </>
   );
 }
