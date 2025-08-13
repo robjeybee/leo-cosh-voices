@@ -1,14 +1,18 @@
+import "../styles/footer.css";
+
 export default function Footer() {
   return (
     <>
-      <section className="footer-cta">
-        <p>Let’s create something amazing together!</p>
-        <button className="contact-btn">Contact Me</button>
-      </section>
-      <footer className="footer">
-        <p>© LeoCoshVoices 2025</p>
-        <p>web by robiebybee</p>
-      </footer>
+      <div className="footer-container">
+        <div className="primary-footer-container">
+          <h3>Let's create something amazing together!</h3>
+          <div className="footer-cta-btn">Get in touch</div>
+        </div>
+        <div className="secondary-footer-container">
+          <div className="copywrite">LeoCoshVoices 2025</div>
+          <div className="author">webbyrobjeybee</div>
+        </div>
+      </div>
     </>
   );
 }
