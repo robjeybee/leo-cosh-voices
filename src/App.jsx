@@ -1,21 +1,21 @@
-import Header from "./components/Header";
-import Showreel from "./components/Showreel";
-import Work from "./components/Work";
-import HighlightBanner from "./components/HighlightBanner";
-import About from "./components/About";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import ImageDiv from "./components/ImageDiv";
+import Create from "./components/Create";
+import Message from "./components/Message";
+import Voice from "./components/Voice";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Header />
-      <Showreel />
-      <Work />
-      <HighlightBanner />
-      <About />
+      <Navbar />
+      <Hero />
+      <ImageDiv />
+      <Create />
+      <Message />
+      <Voice />
       <Contact />
-      <Footer />
     </>
   );
 }
