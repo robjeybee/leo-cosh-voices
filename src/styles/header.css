@@ -1,0 +1,6 @@
+.header {
+    background-color: var(--secondary-bg-color);
+    height: 200px;
+    text-align: center;
+    border: 2px solid red;
+}

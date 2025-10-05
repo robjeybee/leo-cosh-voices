@@ -1,0 +1,6 @@
+.showreel {
+    background-color: var(--primary-bg-color);
+    color: aliceblue;
+    height: 400px;
+    text-align: center;
+}

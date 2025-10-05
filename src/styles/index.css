@@ -1,4 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   padding: 0;
   margin: 0;
+  line-height: 1.6;
+}
+
+:root {
+  --primary-bg-color: #080808;
+  --secondary-bg-color: #F7F7F7;
+  --accent-bg-color: #FFFFFF;
+  --btn-color: #1FAF60;
+  --icon-color: #DFBA3E;
+  --btn-hover-color: #4A45C1;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
