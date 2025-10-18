@@ -1,51 +1,32 @@
-import "../styles/contact.css";
-
 function Contact() {
-  return (
-    <section className="contact-section" id="contact">
-      <div className="contact-content">
-        <h2 className="contact-title">
-          Let's make it <span className="italic">unforgettable</span>
-        </h2>
-
-        <h3 className="contact-subtitle">Get in touch</h3>
-
-        <p className="contact-description">
-          Got a script? I'll bring it to life in 2–3 business days,
-          <br />
-          with a process that's fast, collaborative, and surprisingly fun.
-        </p>
-
-        <a href="mailto:leocosh@leocosh.com">
-          <div className="contact-card">
-            <span className="material-symbols-outlined service-icon">mail</span>
-            <div className="contact-info">
-              <p className="contact-label">Email me directly</p>
-              <a href="mailto:leocosh@leocosh.com" className="contact-email">
-                leocosh@leocosh.com
-              </a>
+    return (
+        <>
+            <div className="contact" id="contact">
+                <div className="contact-container">
+                    <div className="contact-content">
+                        <div>
+                            <h2>Let's make it <span>unforgettable</span>unforgettable</h2>
+                        </div>
+                        <div>
+                            <h3>Get in touch</h3>
+                            <p>Got a script? I'll bring it to life in 2–3 business days,<br />
+with a process that's fast, collaborative, and surprisingly fun.</p>
+                        </div>
+                        <div>
+                            <a href="mailto:#">
+                                <p>Email me</p>
+                            </a>
+                        </div>
+                        <div>
+                            <p>Connect with me</p>
+                            <p>Connect with me</p>
+                            <p>Connect with me</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </a>
-
-        <div className="social-section">
-          <p className="social-title">Connect with me</p>
-          <div className="social-links">
-            <a href="#" className="social-link" aria-label="LinkedIn">
-              <span className="material-symbols-outlined service-icon">
-                rocket_launch
-              </span>
-            </a>
-            <a href="#" className="social-link" aria-label="Instagram">
-              <span className="material-symbols-outlined service-icon">
-                rocket_launch
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </>
+    )
 }
 
 export default Contact;

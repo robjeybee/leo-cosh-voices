@@ -2,67 +2,40 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.362);
+  background-color: rgba(255, 255, 255, 0.913);
+  z-index: 999;
+  /* Make sure it's above everything */
 }
 
-.header-content {
+.header-container {
+  margin: auto;
+  z-index: 999;
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 1.25rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 10px;
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
+    cursor: pointer;
 }
 
-.logo-text {
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.logo a {
+  text-decoration: none;
+  color: var(--primary-bg-color);
 }
 
-.logo-subtitle {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+.logo p {
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 24px;
 }
 
-.header-cta {
-  background-color: #000;
-  color: white;
-  padding: 0.625rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.header-cta:hover {
-  background-color: #333;
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    padding: 1rem 1.5rem;
-  }
-
-  .logo-text {
-    font-size: 1rem;
-  }
-
-  .header-cta {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-  }
+.logo span {
+    font-size: 22px;
+    letter-spacing: 0px;
+    font-weight: 400;
 }

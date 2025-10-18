@@ -1,10 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Demo from "./components/Demo";
-import Services from "./components/Services";
-import About from "./components/About";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,10 +9,10 @@ function App() {
       <Header />
       <Hero />
       <Demo />
-      <Services />
-      <About />
+      <Hero />
+      <Hero />
+      <Hero />
       <Contact />
-      <Footer />
     </>
   );
 }
