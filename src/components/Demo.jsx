@@ -12,7 +12,7 @@ export default function PressPlay() {
 
         <div className="audio-player">
           <audio
-            src="/public/Assets/Leo Cosh Commercial Demo 2025.mp3"
+            src="/Assets/Leo Cosh Commercial Demo 2025.mp3"
             controls
           />
         </div>
