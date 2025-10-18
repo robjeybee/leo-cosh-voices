@@ -1,9 +1,9 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Showreel from "./components/Showreel";
-import Textblock from "./components/Textblock";
+import Demo from "./components/Demo";
+import Services from "./components/Services";
 import About from "./components/About";
-import Contact from "./components/Contact"
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Showreel />
-      <Textblock />
+      <Demo />
+      <Services />
       <About />
       <Contact />
       <Footer />
