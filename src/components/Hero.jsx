@@ -7,7 +7,7 @@ function Hero() {
         <h1 className="hero-title">
           I'm <span className="hero-name">Leo,</span>
           <img
-            src="/public/Assets/Leo Cosh Animated.png"
+            src="/Assets/Leo Cosh Animated.png"
             alt="Leo portrait"
             className="hero-inline-image"
           />
