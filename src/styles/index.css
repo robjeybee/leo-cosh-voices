@@ -31,6 +31,12 @@ body {
   font-style: italic;
 }
 
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cta-button {
   background-color: #10b981;
   color: white;

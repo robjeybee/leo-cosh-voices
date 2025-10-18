@@ -56,25 +56,6 @@
   min-width: 80px;
 }
 
-.progress-bar {
-  flex: 1;
-  height: 4px;
-  background-color: #e5e5e5;
-  border-radius: 2px;
-  overflow: hidden;
-  max-width: 200px;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background-color: #000;
-  transition: width 0.1s ease;
-}
-
-.volume-icon {
-  color: #666;
-}
 
 .press-play-description {
   font-size: 1.125rem;

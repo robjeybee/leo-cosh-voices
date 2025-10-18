@@ -59,7 +59,11 @@ export default function Services() {
           Let's bring your message to life, start today.
         </p>
 
-        <button className="cta-button">LET'S TALK</button>
+              <button className="cta-button">LET'S TALK
+                  <span className="material-symbols-outlined service-icon">
+              arrow_circle_right
+            </span>
+        </button>
       </div>
     </section>
   );

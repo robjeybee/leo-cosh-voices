@@ -41,7 +41,11 @@ export default function About() {
               resonates, entertains and endures.
             </p>
 
-            <button className="cta-button">LET'S TALK</button>
+                      <button className="cta-button">LET'S TALK
+                          <span className="material-symbols-outlined service-icon">
+              arrow_circle_right
+            </span>
+            </button>
           </div>
 
           <div className="about-image">

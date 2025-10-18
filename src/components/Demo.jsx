@@ -28,7 +28,11 @@ export default function PressPlay() {
           people lean in and stay engaged.
         </p>
 
-        <button className="cta-button">LET'S TALK</button>
+              <button className="cta-button">LET'S TALK
+                  <span className="material-symbols-outlined service-icon">
+              arrow_circle_right
+            </span>
+        </button>
       </div>
     </section>
   );

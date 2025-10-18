@@ -18,6 +18,10 @@
   margin-bottom: 3rem;
   text-align: center;
   font-weight: 400;
+text-decoration: underline #dfba3e;
+    text-decoration-thickness: 10px;
+    text-underline-offset: 20px;
+    padding-bottom: 200px;
 }
 
 .about-title .italic {
@@ -69,7 +73,9 @@
 .image-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: url("/public/Assets/Leo_Cosh_Header_Image.JPG");
+  background-position: center;
+  background-size: contain;
   border-radius: 1rem;
 }
 

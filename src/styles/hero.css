@@ -9,6 +9,16 @@
   position: relative;
 }
 
+.hero-inline-image {
+    display: inline-block;
+    height: 80px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
 .hero-content {
   text-align: center;
   max-width: 800px;

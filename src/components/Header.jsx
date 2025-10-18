@@ -9,7 +9,12 @@ function Header() {
             <span className="logo-text">LEO COSH</span>
             <span className="logo-subtitle">VOICES</span>
           </div>
-          <button className="header-cta">LET'S TALK</button>
+                  <button className="header-cta">
+                      <p>Let's Talk</p>
+                        <span className="material-symbols-outlined service-icon">
+              arrow_circle_right
+            </span>
+          </button>
         </div>
       </header>
     </>
