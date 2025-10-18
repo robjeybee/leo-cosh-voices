@@ -2,7 +2,7 @@ import "../styles/contact.css";
 
 function Contact() {
   return (
-    <section className="contact-section">
+    <section className="contact-section" id="contact">
       <div className="contact-content">
         <h2 className="contact-title">
           Let's make it <span className="italic">unforgettable</span>
@@ -16,31 +16,30 @@ function Contact() {
           with a process that's fast, collaborative, and surprisingly fun.
         </p>
 
-              <div className="contact-card">
-                    <span className="material-symbols-outlined service-icon">
-              mail
-            </span>
-                  <div className="contact-info">
-                      
-            <p className="contact-label">Email me directly</p>
-            <a href="mailto:leocosh@leocosh.com" className="contact-email">
-              leocosh@leocosh.com
-            </a>
+        <a href="mailto:leocosh@leocosh.com">
+          <div className="contact-card">
+            <span className="material-symbols-outlined service-icon">mail</span>
+            <div className="contact-info">
+              <p className="contact-label">Email me directly</p>
+              <a href="mailto:leocosh@leocosh.com" className="contact-email">
+                leocosh@leocosh.com
+              </a>
+            </div>
           </div>
-        </div>
+        </a>
 
         <div className="social-section">
           <p className="social-title">Connect with me</p>
           <div className="social-links">
-                      <a href="#" className="social-link" aria-label="LinkedIn">
-                            <span className="material-symbols-outlined service-icon">
-              rocket_launch
-            </span>
+            <a href="#" className="social-link" aria-label="LinkedIn">
+              <span className="material-symbols-outlined service-icon">
+                rocket_launch
+              </span>
             </a>
-                      <a href="#" className="social-link" aria-label="Instagram">
-                            <span className="material-symbols-outlined service-icon">
-              rocket_launch
-            </span>
+            <a href="#" className="social-link" aria-label="Instagram">
+              <span className="material-symbols-outlined service-icon">
+                rocket_launch
+              </span>
             </a>
           </div>
         </div>

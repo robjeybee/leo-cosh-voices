@@ -10,13 +10,19 @@
 }
 
 .hero-inline-image {
-    display: inline-block;
-    height: 80px;
-    width: 180px;
-    object-fit: cover;
-    border-radius: 50px;
-    margin-left: 8px;
-    vertical-align: middle;
+  display: inline-block;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.down-arrow {
+    position: relative;
+    color: #333;
+    bottom: -300px;
+    font-size: 50px;
 }
 
 .hero-content {
@@ -26,7 +32,7 @@
 
 .hero-title {
   font-size: 3.5rem;
-  line-height: 1.2;
+  line-height: 1.;
   margin-bottom: 1.5rem;
   font-weight: 400;
 }

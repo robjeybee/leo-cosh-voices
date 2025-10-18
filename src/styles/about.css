@@ -18,10 +18,10 @@
   margin-bottom: 3rem;
   text-align: center;
   font-weight: 400;
-text-decoration: underline #dfba3e;
-    text-decoration-thickness: 10px;
-    text-underline-offset: 20px;
-    padding-bottom: 200px;
+  text-decoration: underline #dfba3e;
+  text-decoration-thickness: 10px;
+  text-underline-offset: 20px;
+  padding-bottom: 200px;
 }
 
 .about-title .italic {

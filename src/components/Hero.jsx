@@ -7,12 +7,11 @@ function Hero() {
         <h1 className="hero-title">
           I'm <span className="hero-name">Leo,</span>
           <img
-            src="/Assets/Leo Cosh Animated.png"
+            src="/Assets/Leo Cosh Hero Image.png"
             alt="Leo portrait"
             className="hero-inline-image"
-          />
-          <br />
-          a <span className="hero-role">Voice Actor</span>
+                  />
+          <br />a <span className="hero-role">Voice Actor</span>
           <br />
           based in <span className="hero-location">London</span>
         </h1>
@@ -23,13 +22,21 @@ function Hero() {
           with a voice that keeps people listening.
         </p>
 
-        <button className="cta-button">
-          LET'S GET STARTED
-          <span className="material-symbols-outlined service-icon">
-            arrow_circle_right
-          </span>
-        </button>
-      </div>
+        <a href="#contact">
+          <button className="cta-button">
+            LET'S GET STARTED
+            <span className="material-symbols-outlined service-icon">
+              arrow_circle_right
+            </span>
+          </button>
+        </a>
+          </div>
+          
+
+          <span className="material-symbols-outlined service-icon down-arrow">
+              expand_circle_down
+            </span>
+          
     </section>
   );
 }

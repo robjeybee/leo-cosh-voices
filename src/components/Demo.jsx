@@ -11,10 +11,7 @@ export default function PressPlay() {
         </h2>
 
         <div className="audio-player">
-          <audio
-            src="/Assets/Leo Cosh Commercial Demo 2025.mp3"
-            controls
-          />
+          <audio src="/Assets/Leo Cosh Commercial Demo 2025.mp3" controls />
         </div>
 
         <p className="press-play-description">
@@ -28,10 +25,11 @@ export default function PressPlay() {
           people lean in and stay engaged.
         </p>
 
-              <button className="cta-button">LET'S TALK
-                  <span className="material-symbols-outlined service-icon">
-              arrow_circle_right
-            </span>
+        <button className="cta-button">
+          LET'S TALK
+          <span className="material-symbols-outlined service-icon">
+            arrow_circle_right
+          </span>
         </button>
       </div>
     </section>
