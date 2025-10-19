@@ -1,7 +1,7 @@
 import "../styles/audioplayer.css"
 
 import { useRef, useState, useEffect } from "react";
-import "../styles/audioPlayer.css"; // optional, for styling
+
 
 function AudioPlayer({ src, title }) {
   const audioRef = useRef(null);
