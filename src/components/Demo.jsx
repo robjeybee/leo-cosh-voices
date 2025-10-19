@@ -12,9 +12,7 @@ function Demo() {
                         <div className="demo-container-content-heading">
                             <h2><span>Press play</span> - and let's create something together</h2>
                         </div>
-                        <div className="demo-container-content-audio">
-                            <audio src="/Assets/Leo Cosh Commercial Demo 2025.mp3" controls autoPlay></audio>
-                        </div>
+                       
                           <AudioPlayer
         src="/Assets/Leo Cosh Commercial Demo 2025.mp3"
         title="Commercial Demo 2025"

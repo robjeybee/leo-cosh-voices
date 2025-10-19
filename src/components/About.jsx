@@ -23,7 +23,7 @@ Whether behind the mic or behind the script, I combine creative storytelling wit
                         <Button />
                     </div>
                     <div className="about-content-img">
-                        <img src="/public/Assets/Leo_Cosh_Header_Image.JPG" alt="" />
+                        <img src="/Assets/Leo_Cosh_Header_Image.JPG" alt="" />
                     </div>
                 </div>
         </div>

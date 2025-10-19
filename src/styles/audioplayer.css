@@ -1,50 +1,186 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 .audio-player {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-width: 500px;
-    margin: 20px auto;
-    font-family: sans-serif;
-}
-
-.audio-title {
-    font-weight: 500;
-    font-size: 16px;
-    text-align: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    /* <-- ensures padding doesn't overflow */
+    background: radial-gradient(circle at top left, #1a1a1a, #0b0b0b 70%);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 90, 95, 0.1),
+        0 0 60px rgba(255, 153, 102, 0.15);
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
 .controls {
     display: flex;
     align-items: center;
     gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    /* <-- prevents child overflow */
 }
 
-.play-pause-btn {
-    background-color: #111;
+.progress-bar-wrapper {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icon-btn {
+    background: linear-gradient(145deg, #333, #111);
     color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 50px;
+    border: 2px solid rgba(255, 153, 102, 0.4);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-weight: 500;
-    transition: 0.3s ease;
+    transition: all 0.35s ease;
+    box-shadow: 0 0 18px rgba(255, 153, 102, 0.2);
 }
 
-.play-pause-btn:hover {
-    background-color: #ff5a5f;
+.icon-btn.active {
+    background: linear-gradient(145deg, #ff9966, #ff5a5f);
+    box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);
+}
+
+.icon-btn:hover {
+    background: linear-gradient(145deg, #ff5a5f, #ff9966);
+    transform: scale(1.12);
+    box-shadow: 0 0 28px rgba(255, 153, 102, 0.4);
+}
+
+.material-icons {
+    font-size: 32px;
+    filter: drop-shadow(0 0 4px rgba(255, 153, 102, 0.5));
+}
+
+/* Wrapper for glow */
+.progress-bar-wrapper {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+.progress-bar-wrapper.sparkle::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 16px;
+    box-shadow: 0 0 0px rgba(255, 215, 150, 0.6),
+        0 0 1px rgba(168, 110, 247, 0.4);
+    animation: sparkleGlow 1.5s ease-out forwards;
+    pointer-events: none;
 }
 
 .progress-bar {
     flex: 1;
-    height: 6px;
-    background-color: #ddd;
-    border-radius: 3px;
+    height: 16px;
+    background-color: #222;
+    border-radius: 14px;
     overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.15);
+    cursor: pointer;
 }
 
 .progress-filled {
     height: 100%;
-    background-color: #ff5a5f;
     width: 0%;
-    transition: width 0.1s linear;
+    background: linear-gradient(90deg, #ff5a5f, #ff9966, #ffd700, #a86ef7, #ff5a5f);
+    background-size: 400% 400%;
+    border-radius: 14px;
+    transition: width 0.2s linear;
+    animation: magicalFlow 5s linear infinite, glowPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(255, 153, 102, 0.2),
+        0 0 16px rgba(168, 110, 247, 0.1);
+}
+
+@keyframes magicalFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 8px rgba(255, 153, 102, 0.2), 0 0 16px rgba(168, 110, 247, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 12px rgba(255, 218, 102, 0.3), 0 0 24px rgba(168, 110, 247, 0.2);
+    }
+}
+
+@keyframes sparkleGlow {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.time-display {
+    min-width: 60px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .icon-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+
+    .progress-bar {
+        height: 14px;
+    }
+
+    .time-display {
+        font-size: 12px;
+        min-width: 50px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
 }
