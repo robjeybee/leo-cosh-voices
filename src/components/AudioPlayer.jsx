@@ -137,12 +137,13 @@ function AudioPlayer({ src }) {
               className="progress-filled"
               style={{ width: `${progress}%` }}
             ></div>
-          </div>
-        </div>
-
-        <div className="time-display">
+                  </div>
+                  <div className="time-display">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
+        </div>
+
+        
 
         <button
           onClick={toggleMute}
