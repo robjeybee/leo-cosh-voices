@@ -8,12 +8,12 @@ function Header() {
         <div className="header-container">
           <div className="logo" href="#contact">
             <a href="#">
-               <p>Leo Cosh
-              <br />
-              <span>Voices</span>
-            </p>
+              <p>
+                Leo Cosh
+                <br />
+                <span>Voices</span>
+              </p>
             </a>
-           
           </div>
 
           <Button />

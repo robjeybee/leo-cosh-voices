@@ -1,5 +1,7 @@
+import Button from "./Button"
+import AudioPlayer from "./AudioPlayer";
 import "../styles/demo.css"
-import Button from "./Button";
+
 
 function Demo() {
     return (
@@ -7,36 +9,28 @@ function Demo() {
             <div className="demo">
                 <div className="demo-container">
                     <div className="demo-container-content">
-                             <div className="demo-container-title">
-                    <h2><span>Press play</span> — and let's create
-                    
-                        <br />
-                    something amazing together</h2>
+                        <div className="demo-container-content-heading">
+                            <h2><span>Press play</span> - and let's create something together</h2>
+                        </div>
+                        <div className="demo-container-content-audio">
+                            <audio src="/Assets/Leo Cosh Commercial Demo 2025.mp3" controls autoPlay></audio>
+                        </div>
+                          <AudioPlayer
+        src="/Assets/Leo Cosh Commercial Demo 2025.mp3"
+        title="Commercial Demo 2025"
+      />
+                        <div className="demo-container-content-subheadings">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, voluptate?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, voluptate?</p>
+                        </div> 
+                        <div className="demo-container-content-cta">
+                            <Button />
+                        </div>
                     </div>
-                    <div className="demo-container-demoreel">
-                        <audio 
-            src="/Assets/Leo Cosh Commercial Demo 2025.mp3" 
-            controls
-            preload="none"
-          >
-            Your browser does not support the audio element.
-          </audio>
-                    </div>
-                      <div className="demo-container-subtitle">
-                    <p>If your brand, film, or campaign isn't connecting,
-                        <br />it's not your message — it's how it's told.</p>
-                    <p>I bring warmth, clarity, and presence that makes
-<br />people lean in and stay engaged.</p>
                 </div>
-                <Button />
-                    </div>
-               
-                    
-                </div>
-              
             </div>
         </>
     )
 }
 
-export default Demo;
+export default Demo

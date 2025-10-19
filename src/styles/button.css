@@ -1,61 +1,20 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-
-  padding: 0.6em 1.4em;
-  /* Scales with font size */
+  justify-content: space-evenly;
+  gap: 8px;
+  padding: 10px 0px;
   border: none;
-  border-radius: 9999px;
-  /* Perfectly rounded on all sizes */
   background-color: var(--primary-bg-color);
-  color: #fff;
-
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
-
-  width: auto;
-  min-width: 9em;
-  /* Scales with text, keeps consistency */
+  border-radius: 50px;
+  font-weight: 600;
+  width: 175px;
+  text-decoration: none;
 }
 
-/* Icon */
 .service-icon {
-  font-size: 1.4em;
-  /* Scales with button text size */
-  flex-shrink: 0;
-}
-
-/* Hover + Focus */
-.btn:hover,
-.btn:focus-visible {
-  background-color: var(--primary-bg-color);
-  transform: translateY(-2px);
-}
-
-/* Active (for touch devices) */
-.btn:active {
-  transform: translateY(0);
-  opacity: 0.9;
-}
-
-/* Accessibility: focus ring */
-.btn:focus-visible {
-  outline: 2px solid var(--primary-bg-hover);
-  outline-offset: 3px;
-}
-
-/* Larger screens: scale up font and padding */
-@media (min-width: 768px) {
-  .btn {
-    font-size: 1.125rem;
-    padding: 0.75em 1.75em;
-    gap: 0.6em;
-  }
+  font-size: 30px;
 }

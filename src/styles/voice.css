@@ -1,0 +1,216 @@
+/* Base styles - Mobile first */
+.voice {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 16px;
+}
+
+.voice-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.voice-heading {
+    text-align: center;
+}
+
+.voice-heading h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.voice-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: #ccc;
+}
+
+/* Services Section */
+.voice-services {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.voice-service {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    background-color: #111;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 100%;
+}
+
+.voice-service h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.voice-service p {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+/* Footer */
+.voice-footer {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.voice-footer p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 12px;
+}
+
+.bold-text {
+    font-weight: 600;
+    color: #fff;
+}
+
+.voice-footer hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #555;
+}
+
+/* Tablet and above */
+@media (min-width: 768px) {
+    .voice-heading h2 {
+        font-size: 42px;
+    }
+
+    .voice-services {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .voice-service {
+        flex: 1 1 calc(50% - 24px);
+        max-width: calc(50% - 24px);
+    }
+
+    .voice-service h3 {
+        font-size: 20px;
+    }
+
+    .voice-service p {
+        font-size: 16px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .voice-heading h2 {
+        font-size: 56px;
+    }
+
+    .voice-services {
+        gap: 40px;
+    }
+
+    .voice-service {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+
+    .voice-footer p {
+        font-size: 18px;
+    }
+}
+
+/* Mobile-first: single column */
+.voice-services {
+    display: flex;
+    flex-direction: column;
+    /* column on mobile */
+    gap: 20px;
+}
+
+/* card base */
+.voice-service {
+    display: flex;
+    align-items: flex-start;
+    /* icon + text */
+    gap: 12px;
+    background: #0f0f0f;
+    border-radius: 8px;
+    padding: 18px;
+    color: #e6e6e6;
+    /* allow cards to stretch to match row height when in multi-column */
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+/* make inner text layout stable */
+.voice-service>div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* larger icon size */
+.icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+/* typography */
+.voice-service h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.voice-service p {
+    margin: 0;
+    font-size: 15px;
+    color: #cfcfcf;
+    line-height: 1.5;
+}
+
+/* Desktop: convert to 2x2 using flex-wrap */
+@media (min-width: 992px) {
+    .voice-services {
+        flex-direction: row;
+        /* row mode */
+        flex-wrap: wrap;
+        /* allow wrapping to next row */
+        gap: 28px;
+        /* gap between cards (used in width calc) */
+        align-items: stretch;
+        /* make cards in same row equal height */
+        justify-content: center;
+    }
+
+    /* each card becomes half-width (2 columns). subtract gap so two fit exactly */
+    .voice-service {
+        flex: 1 1 calc(50% - 14px);
+        /* 50% minus half the gap */
+        max-width: calc(50% - 14px);
+        padding: 24px;
+    }
+
+    /* optional: make text slightly larger on desktop */
+    .voice-service h3 {
+        font-size: 20px;
+    }
+
+    .voice-service p {
+        font-size: 16px;
+    }
+}

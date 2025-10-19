@@ -1,7 +1,9 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Demo from "./components/Demo";
 import Contact from "./components/Contact";
+import Demo from "./components/Demo";
+import About from "./components/About";
+import VoiceSection from "./components/Services";
 
 function App() {
   return (
@@ -9,9 +11,8 @@ function App() {
       <Header />
       <Hero />
       <Demo />
-      <Hero />
-      <Hero />
-      <Hero />
+      <About />
+      <VoiceSection />
       <Contact />
     </>
   );
