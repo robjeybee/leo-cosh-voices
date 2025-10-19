@@ -55,7 +55,7 @@ function AudioPlayer({ src }) {
       setProgress(0);
       setCurrentTime(0);
       setEnded(false); // remove sparkle after animation
-    }, 1500); // match CSS animation duration
+    }, 500); // match CSS animation duration
   };
 
   const seekToPosition = (clientX) => {
@@ -126,7 +126,10 @@ function AudioPlayer({ src }) {
         </button>
 
         {/* Progress Bar Wrapper */}
-        <div className={`progress-bar-wrapper ${ended ? "sparkle" : ""}`}>
+              <div className={`progress-bar-wrapper ${ended ? "sparkle" : ""}`}>
+                               <div className="time-display">
+          {formatTime(currentTime)} / {formatTime(duration)}
+        </div>
           <div
             ref={progressBarRef}
             className="progress-bar"
@@ -138,9 +141,7 @@ function AudioPlayer({ src }) {
               style={{ width: `${progress}%` }}
             ></div>
                   </div>
-                  <div className="time-display">
-          {formatTime(currentTime)} / {formatTime(duration)}
-        </div>
+     
         </div>
 
         
