@@ -1,43 +1,52 @@
+import React from "react";
 import "../styles/contact.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
-function Contact() {
+export default function Contact() {
   return (
-    <div className="contact" id="contact">
-      <div className="contact-container">
-        <div className="contact-content">
-          <div className="contact-content-header">
-            <p>
-              Let's make it <span>unforgettable</span>
-            </p>
-          </div>
+    <section className="contact-container" id="contact">
+      <h1 className="contact-main-heading">Let’s make it unforgettable.</h1>
+      <h2 className="contact-subheading">Get in touch</h2>
+      <p className="contact-description">
+        Got a script? I’ll bring it to life in 2–3 business days, with a process
+        that’s fast, collaborative, and surprisingly fun.
+      </p>
 
-          <div className="contact-content-cta">
-            <p>Get in touch</p>
-            <p>
-              Got a script? I’ll bring it to life in 2–3 business days, with a
-              process that’s fast, collaborative, and surprisingly fun.
-            </p>
-            <a href="mailto:youremail@example.com" className="contact-email-link">
-              <span className="material-symbols-outlined">mail</span>
-              <p>Email me</p>
-            </a>
-          </div>
-
-          <div className="contact-content-socials">
-            <p>connect with me</p>
-            <div className="social-icons">
-              <FontAwesomeIcon icon={faPhone} />
-              <FontAwesomeIcon icon={faLinkedinIn} />
-              <FontAwesomeIcon icon={faInstagram} />
-            </div>
-          </div>
-        </div>
+      <div className="contact-get-in-touch">
+        <a href="mailto:hello@example.com" className="contact-btn">
+          <span className="material-symbols-outlined">mail</span>
+          Email Me
+        </a>
+        <a href="tel:+447568307902" className="contact-btn">
+          <span className="material-symbols-outlined">call</span>
+          Call Me
+        </a>
       </div>
-    </div>
+
+      <h3 className="contact-connect-heading">Connect with me</h3>
+      <div className="contact-socials">
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebookF />
+        </a>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn />
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram />
+        </a>
+      </div>
+    </section>
   );
 }
-
-export default Contact;

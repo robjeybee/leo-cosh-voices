@@ -1,65 +1,63 @@
-import "../styles/voice.css";
-import Button from "./Button";
+import React from "react";
+import "../styles/services.css";
 
-function VoiceSection() {
+export default function Services() {
+  const services = [
+    {
+      title: "Corporate film?",
+      description:
+        "Deliver a message that’s professional, polished, and full of personality.",
+      icon: "movie", // Google Material Icon
+    },
+    {
+      title: "Launching a brand?",
+      description: "Spark emotion with warmth and expertise.",
+      icon: "emoji_events",
+    },
+    {
+      title: "Explainer video?",
+      description: "Make complex ideas sound clear, simple, and engaging.",
+      icon: "help_outline",
+    },
+    {
+      title: "Character work?",
+      description: "Bring scripts to life with an authentic voice and energy.",
+      icon: "person",
+    },
+  ];
+
   return (
-    <section className="voice">
-      <div className="voice-container">
-        <div className="voice-heading">
-          <h2>
-            With <em>a voice that works</em> as hard as you do
-          </h2>
+    <div className="services-container">
+      <section className="services">
+        <h2 className="services-heading">
+          With a voice that works as hard as you do
+        </h2>
+
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div key={index} className="service-card">
+              <span className="material-symbols-outlined service-icon">
+                {service.icon}
+              </span>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="voice-services">
-          <div className="voice-service">
-            <span className="icon">🎙️</span>
-            <div>
-              <h3>Corporate film?</h3>
-              <p>Deliver a message that’s professional, polished, and full of personality.</p>
-            </div>
-          </div>
+        <p className="services-summary">
+          Tone, pacing, and delivery – matched to every vision, so audiences
+          don’t just hear your message – they feel it.
+        </p>
 
-          <div className="voice-service">
-            <span className="icon">🎙️</span>
-            <div>
-              <h3>Launching a brand?</h3>
-              <p>Spark emotion with warmth and expertise.</p>
-            </div>
-          </div>
-
-          <div className="voice-service">
-            <span className="icon">🎙️</span>
-            <div>
-              <h3>Explainer video?</h3>
-              <p>Make complex ideas sound clear, simple, and engaging.</p>
-            </div>
-          </div>
-
-          <div className="voice-service">
-            <span className="icon">🎙️</span>
-            <div>
-              <h3>Character work?</h3>
-              <p>Bring scripts to life with an authentic voice and energy.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="voice-footer">
-          <p>
-            Tone, pacing, and delivery – matched to every vision, so audiences don’t just hear your
-            message – <em>they feel it.</em>
-          </p>
-          <p className="bold-text">
-            Let’s bring your message to life, start today.
-          </p>
-
-          <hr />
-          <Button text="LET’S TALK" />
-        </div>
-      </div>
-    </section>
+        <button
+          className="services-cta"
+          onClick={() => (window.location.href = "#contact")}
+        >
+          Let’s talk{" "}
+          <span className="material-symbols-outlined">arrow_circle_right</span>
+        </button>
+      </section>
+    </div>
   );
 }
-
-export default VoiceSection;

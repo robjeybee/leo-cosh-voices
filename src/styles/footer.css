@@ -1,0 +1,43 @@
+.footer {
+  width: 100%;
+  background-color: #000;
+  /* match contact section */
+  color: #fff;
+  padding: 48px 24px;
+  /* increased top/bottom padding */
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  /* consistent font */
+  font-style: normal;
+  /* ensure normal, not italic */
+}
+
+.footer-content {
+  max-width: 1200px;
+  /* match main layout width */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  /* space out left/right sections */
+  align-items: center;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  /* allow stacking on small screens */
+}
+
+.footer-left,
+.footer-right {
+  margin: 8px 0;
+  /* vertical spacing when stacked */
+  font-style: normal;
+  /* ensure normal text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+    /* stack text */
+    text-align: center;
+  }
+}

@@ -1,0 +1,163 @@
+/* Entire section background */
+.services-container {
+  width: 100%;
+  background-color: #000;
+  padding: 64px 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner services content */
+.services {
+  width: 90%;
+  max-width: 1400px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Heading */
+.services-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* Service cards container */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+/* Individual card */
+.service-card {
+  flex: 1 1 100%;
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: 12px;
+}
+
+/* Icon at top of card */
+.service-card .service-icon {
+  font-size: 32px;
+  color: #1db954;
+}
+
+/* Card heading */
+.service-card h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #fff;
+}
+
+/* Card paragraph */
+.service-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* Summary paragraph under cards */
+.services-summary {
+  font-size: 1.1rem;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* CTA Button */
+.services-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 8px;
+  padding: 10px 0;
+  border: 2px solid #1db954;
+  /* added border */
+  background-color: var(--primary-bg-color, #1db954);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 24px;
+  /* updated radius */
+  font-weight: 600;
+  width: 175px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.services-cta:hover {
+  background-color: #1ed760;
+  transform: scale(1.02);
+}
+
+/* Tablet & Desktop: 2x2 grid + container padding */
+@media (min-width: 768px) {
+  .service-card {
+    flex: 0 0 calc(50% - 12px);
+    max-width: none;
+  }
+
+  .services-container {
+    padding: 96px 32px;
+    /* more padding on tablet */
+  }
+}
+
+/* Desktop large screens */
+@media (min-width: 1200px) {
+  .services {
+    gap: 48px;
+  }
+
+  .services-heading {
+    font-size: 2.5rem;
+  }
+
+  .service-card {
+    padding: 32px;
+  }
+
+  .services-summary {
+    font-size: 1.2rem;
+  }
+
+  .services-cta {
+    font-size: 1.2rem;
+    padding: 12px 0;
+    width: 200px;
+    border-radius: 28px;
+    /* slightly larger radius on desktop */
+  }
+
+  .services-container {
+    padding: 128px 64px;
+    /* extra padding on desktop */
+  }
+}
+
+/* Material icon for arrows and card icons */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 48;
+}
