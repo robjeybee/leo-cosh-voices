@@ -1,7 +1,7 @@
 /* Entire section */
 .about-container {
   width: 100%;
-  background-color: #fff;
+  background: var(--primary-light);
   padding: 64px 24px;
   /* match main player side spacing on mobile */
   box-sizing: border-box;

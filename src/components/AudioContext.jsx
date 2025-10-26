@@ -38,7 +38,13 @@ export const AudioProvider = ({ children, src }) => {
 
     const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
     const handleLoadedMetadata = () => setDuration(audio.duration);
-    const handleEnded = () => setIsPlaying(false);
+
+    const handleEnded = () => {
+      // Reset to start when audio finishes
+      audio.currentTime = 0;
+      setCurrentTime(0);
+      setIsPlaying(false);
+    };
 
     audio.addEventListener("timeupdate", handleTimeUpdate);
     audio.addEventListener("loadedmetadata", handleLoadedMetadata);

@@ -1,9 +1,16 @@
-/* Main player container */
+.main-container {
+  background: var(--primary-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
 .main-player {
   width: 90%;
   max-width: 700px;
   margin: 48px auto;
-  /* space around the main player */
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -12,7 +19,7 @@
 
 /* Player card */
 .main-player-card {
-  background: #f5f5f5;
+  background: white;
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -20,18 +27,16 @@
   box-sizing: border-box;
 }
 
-/* Main player heading */
+/* Main player heading - centered everywhere */
 .main-player-heading {
   width: 100%;
   max-width: 90%;
-  /* ensures it doesn't overflow card */
   text-align: center;
   margin-bottom: 32px;
 }
 
 .main-player-heading h1 {
   font-size: 2.5rem;
-  /* readable base size */
   line-height: 1.2;
   letter-spacing: -1px;
   font-weight: 600;
@@ -41,13 +46,11 @@
 
 .main-player-heading p {
   font-size: 1.2rem;
-  /* readable base size */
   line-height: 1.5;
   color: #666;
   margin: 4px 0 0 0;
 }
 
-/* Optional: scale heading for larger screens */
 @media (min-width: 768px) {
   .main-player-heading h1 {
     font-size: 3rem;
@@ -84,10 +87,16 @@
   object-fit: cover;
 }
 
-/* Track info */
+/* Track info inside card - left aligned on mobile, centered on tablets+ */
 .main-player-info {
   margin-bottom: 24px;
-  text-align: center;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .main-player-info {
+    text-align: center;
+  }
 }
 
 /* Progress bar */
@@ -103,51 +112,51 @@
   gap: 24px;
 }
 
-/* Buttons */
+/* Buttons - previous/next icons */
 .control-button {
   background: transparent;
   border: none;
-  color: #666;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  cursor: pointer;
+  padding: 0;
   transition: all 0.2s ease;
 }
 
-.control-button:hover {
-  color: #222;
-  background: #ddd;
+.control-button:hover .player-icon {
+  color: var(--primary-accent);
 }
 
+/* Play button with circle */
 .play-button {
-  background: #1db954;
-  color: white;
+  background: var(--primary-accent);
+  border-radius: 50%;
   width: 64px;
   height: 64px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .play-button:hover {
-  background: #1ed760;
+  background: var(--secondary-accent);
   transform: scale(1.05);
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-    "FILL" 0,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 48;
+/* Font Awesome icons */
+.player-icon {
+  font-size: 28px;
+  color: var(--primary-dark);
+  /* black for prev/next */
+}
+
+/* Play button icon */
+.play-button .player-icon {
+  font-size: 32px;
+  color: white;
+  /* white inside green circle */
 }

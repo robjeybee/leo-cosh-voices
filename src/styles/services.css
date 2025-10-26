@@ -1,7 +1,7 @@
 /* Entire section background */
 .services-container {
   width: 100%;
-  background-color: #000;
+  background-color: var(--primary-dark);
   padding: 64px 16px;
   box-sizing: border-box;
   display: flex;
@@ -13,7 +13,8 @@
   width: 90%;
   max-width: 1400px;
   font-family: Arial, sans-serif;
-  text-align: center;
+  text-align: left;
+  /* mobile-first: left-aligned */
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -55,7 +56,7 @@
 /* Icon at top of card */
 .service-card .service-icon {
   font-size: 32px;
-  color: #1db954;
+  color: var(--secondary-accent);
 }
 
 /* Card heading */
@@ -77,35 +78,41 @@
   font-size: 1.1rem;
   color: #fff;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 0 0 0;
+  /* mobile-first: left-aligned */
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
 }
 
-/* CTA Button */
 .services-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  /* center content horizontally */
   gap: 8px;
-  padding: 10px 0;
-  border: 2px solid #1db954;
-  /* added border */
-  background-color: var(--primary-bg-color, #1db954);
+  padding: 10px 16px;
+  /* add horizontal padding for icon+text */
+  background-color: var(--primary-accent);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   border-radius: 24px;
-  /* updated radius */
   font-weight: 600;
-  width: 175px;
+  width: auto;
+  /* let width adapt to content */
+  min-width: 140px;
+  /* optional minimum width */
   text-decoration: none;
-  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  outline: none;
 }
 
-.services-cta:hover {
-  background-color: #1ed760;
-  transform: scale(1.02);
+.services-cta:hover,
+.services-cta:focus {
+  background-color: transparent;
+  color: var(--primary-accent);
+  border-color: var(--primary-accent);
 }
 
 /* Tablet & Desktop: 2x2 grid + container padding */
@@ -117,7 +124,21 @@
 
   .services-container {
     padding: 96px 32px;
-    /* more padding on tablet */
+  }
+
+  .services {
+    text-align: center;
+    /* center headings/content on larger screens */
+  }
+
+  .services-summary {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .services-cta {
+    justify-content: center;
+    /* center CTA on larger screens */
   }
 }
 
@@ -144,12 +165,10 @@
     padding: 12px 0;
     width: 200px;
     border-radius: 28px;
-    /* slightly larger radius on desktop */
   }
 
   .services-container {
     padding: 128px 64px;
-    /* extra padding on desktop */
   }
 }
 

@@ -5,9 +5,8 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <span className="footer-left">
-          2025 Leo Cosh. Professional Voice Actor.
+          <p className="footer-left-p">2025</p><a href="#main">Leo Cosh | Professional Voice Actor</a>
         </span>
-        <span className="footer-right">webbyrobjeybee</span>
       </div>
     </footer>
   );

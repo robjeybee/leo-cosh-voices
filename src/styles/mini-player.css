@@ -9,9 +9,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-100%);
   opacity: 0;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 1000;
   font-family: Arial, sans-serif;
 }
@@ -36,6 +34,7 @@
 
 .mini-player-info {
   flex: 1;
+  line-height: 1.45rem;
   text-align: left;
 }
 
@@ -52,6 +51,7 @@
   color: #666;
 }
 
+/* Buttons are transparent, no circles */
 .mini-player-button {
   background: transparent;
   border: none;
@@ -60,21 +60,14 @@
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease;
+  padding: 0;
 }
 
-.mini-player-button.play-button {
-  background: #1db954;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  font-size: 28px;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.mini-player-button.play-button:hover {
-  background: #1ed760;
-  transform: scale(1.05);
+/* Icon styling */
+.mini-player-icon {
+  font-size: 18px;
+  color: var(--primary-dark);
+  /* black/dark icon */
 }
 
 .mini-player-progress {

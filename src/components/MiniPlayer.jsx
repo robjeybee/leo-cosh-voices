@@ -1,6 +1,8 @@
 import React from "react";
 import { useAudio } from "./AudioContext";
 import ProgressBar from "./ProgressBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "../styles/mini-player.css";
 
 export default function MiniPlayer({ isVisible }) {
@@ -21,9 +23,10 @@ export default function MiniPlayer({ isVisible }) {
             className="mini-player-button"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
-            <span className="material-symbols-outlined">
-              {isPlaying ? "pause" : "play_arrow"}
-            </span>
+            <FontAwesomeIcon
+              icon={isPlaying ? faPause : faPlay}
+              className="mini-player-icon"
+            />
           </button>
         </div>
 

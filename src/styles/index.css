@@ -6,12 +6,11 @@
 }
 
 :root {
-  --primary-bg-color: #080808;
-  --secondary-bg-color: #f7f7f7;
-  --accent-bg-color: #ffffff;
-  --btn-color: #519740;
-  --icon-color: #dfba3e;
-  --btn-hover-color: #4a45c1;
+  --primary-dark: #1a1b1d;
+  --primary-light: #f3f1e0;
+  --primary-accent: #ec5128;
+  --secondary-accent: #dfba3e;
+  --third-accent: #4a45c1;
 }
 
 body {

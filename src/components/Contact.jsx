@@ -4,7 +4,8 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section className="contact-container" id="contact">
+    <div className="main-contact-container">
+         <section className="contact-container" id="contact">
       <h1 className="contact-main-heading">Let’s make it unforgettable.</h1>
       <h2 className="contact-subheading">Get in touch</h2>
       <p className="contact-description">
@@ -48,5 +49,7 @@ export default function Contact() {
         </a>
       </div>
     </section>
+    </div>
+   
   );
 }
