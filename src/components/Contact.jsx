@@ -14,10 +14,13 @@ export default function Contact() {
       </p>
 
       <div className="contact-get-in-touch">
-        <a href="mailto:hello@example.com" className="contact-btn">
-          <span className="material-symbols-outlined">mail</span>
-          Email Me
-        </a>
+          <a
+    href="mailto:leo.cosh@yahoo.co.uk?subject=Voice%20Over%20Enquiry&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20work%20and%20would%20love%20to%20discuss..."
+    className="contact-btn"
+  >
+    <span className="material-symbols-outlined">mail</span>
+    Email Me
+  </a>
         <a href="tel:+447568307902" className="contact-btn">
           <span className="material-symbols-outlined">call</span>
           Call Me
