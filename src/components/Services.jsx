@@ -6,7 +6,7 @@ export default function Services() {
     {
       title: "Corporate film?",
       description:
-        "Deliver a message that’s professional, polished, and full of personality.",
+        "Deliver a message that’s professional, polished, and persuasive.",
       icon: "movie", // Google Material Icon
     },
     {
@@ -16,12 +16,14 @@ export default function Services() {
     },
     {
       title: "Explainer video?",
-      description: "Make complex ideas sound clear, simple, and engaging.",
+      description:
+        "Give your ideas a clear, friendly and trustworthy presentation.",
       icon: "help_outline",
     },
     {
       title: "Character work?",
-      description: "Bring scripts to life with an authentic voice and energy.",
+      description:
+        "Bring scripts to life through a range of accents and authentic energy. Already inspired by a voice? See if I can match it!",
       icon: "person",
     },
   ];
@@ -47,7 +49,7 @@ export default function Services() {
 
         <p className="services-summary">
           Tone, pacing, and delivery – matched to every vision, so audiences
-          don’t just hear your message – they feel it.
+          don’t just hear your message – they feel it - no matter the size!
         </p>
 
         <button

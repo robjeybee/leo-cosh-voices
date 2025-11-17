@@ -5,7 +5,8 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <span className="footer-left">
-          <p className="footer-left-p">2025</p><a href="#main">Leo Cosh | Professional Voice Actor</a>
+          <p className="footer-left-p">2025</p>
+          <a href="#main">Leo Cosh | Professional Voice Actor</a>
         </span>
       </div>
     </footer>

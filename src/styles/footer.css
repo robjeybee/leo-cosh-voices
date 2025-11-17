@@ -7,7 +7,6 @@
   /* increased top/bottom padding */
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-
 }
 
 .footer-content {
@@ -36,7 +35,7 @@
 }
 
 .footer-left-p {
-    color: var(--primary-light);
+  color: var(--primary-light);
 }
 
 .footer-left,

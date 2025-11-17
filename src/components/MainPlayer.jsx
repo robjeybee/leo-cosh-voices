@@ -1,7 +1,7 @@
 import React from "react";
 import { useAudio } from "./AudioContext";
 import ProgressBar from "./ProgressBar";
-import albumArtwork from "../assets/Leo Cosh Animated.png";
+import albumArtwork from "/Assets/Leo_Cosh_Header_Image.JPG";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "../styles/main-player.css";
@@ -28,12 +28,10 @@ export default function MainPlayer() {
         </div>
 
         <div className="main-player-card">
-          {/* Artwork */}
           <div className="main-player-artwork">
             <img src={albumArtwork} alt={trackTitle} />
           </div>
 
-          {/* Track info */}
           <div className="main-player-info">
             <h1 className="main-player-title">Press Play</h1>
             <p className="main-player-description">
@@ -41,7 +39,6 @@ export default function MainPlayer() {
             </p>
           </div>
 
-          {/* Progress bar */}
           <div className="main-player-progress">
             <ProgressBar
               showTime={true}
@@ -51,9 +48,7 @@ export default function MainPlayer() {
             />
           </div>
 
-          {/* Controls */}
           <div className="main-player-controls">
-            {/* Replay 10 seconds */}
             <button
               className="control-button"
               aria-label="Replay 10 seconds"
@@ -62,7 +57,6 @@ export default function MainPlayer() {
               <span className="material-symbols-outlined">replay_10</span>
             </button>
 
-            {/* Play/Pause */}
             <button
               onClick={togglePlayPause}
               className="control-button play-button"
@@ -74,7 +68,6 @@ export default function MainPlayer() {
               />
             </button>
 
-            {/* Forward 10 seconds */}
             <button
               className="control-button"
               aria-label="Forward 10 seconds"

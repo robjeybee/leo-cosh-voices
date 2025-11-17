@@ -28,10 +28,12 @@
   transform-origin: left;
   transform: scaleX(0);
   will-change: transform;
-  background: linear-gradient(90deg,
-      var(--primary-accent),
-      var(--secondary-accent),
-      var(--primary-accent));
+  background: linear-gradient(
+    90deg,
+    var(--primary-accent),
+    var(--secondary-accent),
+    var(--primary-accent)
+  );
   background-size: 200% 100%;
   animation: progressGradient 3s linear infinite;
   transition: transform 0.05s linear;
