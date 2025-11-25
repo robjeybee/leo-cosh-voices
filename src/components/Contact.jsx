@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/contact.css";
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -28,13 +28,6 @@ export default function Contact() {
 
         <h3 className="contact-connect-heading">Connect with me</h3>
         <div className="contact-socials">
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebookF />
-          </a>
           <a
             href="https://www.linkedin.com/in/leo-cosh-204993b7/"
             target="_blank"

@@ -11,7 +11,7 @@ export default function Services() {
     },
     {
       title: "Launching a brand?",
-      description: "Spark emotion with warmth and expertise.",
+      description: "Start strong with a confident voice that tells your story.",
       icon: "emoji_events",
     },
     {
