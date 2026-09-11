@@ -7,10 +7,16 @@ import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "../styles/main-player.css";
 
 export default function MainPlayer() {
-  const { isPlaying, togglePlayPause, currentTime, duration, seek } =
-    useAudio();
-
-  const trackTitle = "Track Title";
+  const {
+    isPlaying,
+    togglePlayPause,
+    currentTime,
+    duration,
+    seek,
+    tracks,
+    currentTrackIndex,
+    playTrack,
+  } = useAudio();
 
   return (
     <div className="main-container" id="main">
@@ -27,55 +33,75 @@ export default function MainPlayer() {
           </p>
         </div>
 
-        <div className="main-player-card">
-          <div className="main-player-artwork">
-            <img src={albumArtwork} alt={trackTitle} />
-          </div>
+        <div className="players-grid">
+          {tracks.map((track, index) => {
+            const isCurrentTrack = index === currentTrackIndex;
+            const isTrackPlaying = isCurrentTrack && isPlaying;
 
-          <div className="main-player-info">
-            <h1 className="main-player-title">Press Play</h1>
-            <p className="main-player-description">
-              Let's create something amazing together
-            </p>
-          </div>
+            return (
+              <div key={index} className="main-player-card">
+                <div className="main-player-artwork">
+                  <img src={albumArtwork} alt={track.title} />
+                </div>
 
-          <div className="main-player-progress">
-            <ProgressBar
-              showTime={true}
-              currentTime={currentTime}
-              duration={duration}
-              onSeek={seek}
-            />
-          </div>
+                <div className="main-player-info">
+                  <h2 className="main-player-title">{track.title}</h2>
+                  <p className="main-player-description">{track.description}</p>
+                </div>
 
-          <div className="main-player-controls">
-            <button
-              className="control-button"
-              aria-label="Replay 10 seconds"
-              onClick={() => seek(currentTime - 10)}
-            >
-              <span className="material-symbols-outlined">replay_10</span>
-            </button>
+                <div className="main-player-progress">
+                  <ProgressBar
+                    showTime={true}
+                    currentTime={isCurrentTrack ? currentTime : 0}
+                    duration={isCurrentTrack ? duration : 0}
+                    onSeek={(time) => {
+                      if (!isCurrentTrack) playTrack(index);
+                      seek(time);
+                    }}
+                  />
+                </div>
 
-            <button
-              onClick={togglePlayPause}
-              className="control-button play-button"
-              aria-label={isPlaying ? "Pause" : "Play"}
-            >
-              <FontAwesomeIcon
-                icon={isPlaying ? faPause : faPlay}
-                className="player-icon"
-              />
-            </button>
+                <div className="main-player-controls">
+                  <button
+                    className="control-button"
+                    aria-label="Replay 10 seconds"
+                    onClick={() => {
+                      if (isCurrentTrack) seek(currentTime - 10);
+                    }}
+                  >
+                    <span className="material-symbols-outlined">replay_10</span>
+                  </button>
 
-            <button
-              className="control-button"
-              aria-label="Forward 10 seconds"
-              onClick={() => seek(currentTime + 10)}
-            >
-              <span className="material-symbols-outlined">forward_10</span>
-            </button>
-          </div>
+                  <button
+                    onClick={() => {
+                      if (isCurrentTrack) {
+                        togglePlayPause();
+                      } else {
+                        playTrack(index);
+                      }
+                    }}
+                    className="control-button play-button"
+                    aria-label={isTrackPlaying ? "Pause" : "Play"}
+                  >
+                    <FontAwesomeIcon
+                      icon={isTrackPlaying ? faPause : faPlay}
+                      className="player-icon"
+                    />
+                  </button>
+
+                  <button
+                    className="control-button"
+                    aria-label="Forward 10 seconds"
+                    onClick={() => {
+                      if (isCurrentTrack) seek(currentTime + 10);
+                    }}
+                  >
+                    <span className="material-symbols-outlined">forward_10</span>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

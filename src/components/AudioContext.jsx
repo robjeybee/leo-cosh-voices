@@ -10,21 +10,44 @@ const AudioContext = createContext();
 
 export const useAudio = () => useContext(AudioContext);
 
-export const AudioProvider = ({ children, src }) => {
-  const audioRef = useRef(new Audio(src));
+export const AudioProvider = ({ children, tracks = [] }) => {
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  const audioRef = useRef(null);
+
+  // Initialize Audio instance
+  if (!audioRef.current && tracks.length > 0) {
+    audioRef.current = new Audio(tracks[0].src);
+  }
+
+  const currentTrack = tracks[currentTrackIndex] || {};
 
   const togglePlayPause = () => {
     if (!audioRef.current) return;
 
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play();
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(console.error);
     }
-    setIsPlaying(!isPlaying);
+  };
+
+  const playTrack = (index) => {
+    if (index === currentTrackIndex && isPlaying) return;
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+
+    setCurrentTrackIndex(index);
+    audioRef.current = new Audio(tracks[index].src);
+    setCurrentTime(0);
+
+    audioRef.current.play().then(() => setIsPlaying(true)).catch(console.error);
   };
 
   const seek = (time) => {
@@ -35,12 +58,11 @@ export const AudioProvider = ({ children, src }) => {
 
   useEffect(() => {
     const audio = audioRef.current;
+    if (!audio) return;
 
     const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
     const handleLoadedMetadata = () => setDuration(audio.duration);
-
     const handleEnded = () => {
-      // Reset to start when audio finishes
       audio.currentTime = 0;
       setCurrentTime(0);
       setIsPlaying(false);
@@ -55,7 +77,7 @@ export const AudioProvider = ({ children, src }) => {
       audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
       audio.removeEventListener("ended", handleEnded);
     };
-  }, []);
+  }, [currentTrackIndex]);
 
   return (
     <AudioContext.Provider
@@ -66,6 +88,10 @@ export const AudioProvider = ({ children, src }) => {
         currentTime,
         duration,
         seek,
+        tracks,
+        currentTrackIndex,
+        currentTrack,
+        playTrack,
       }}
     >
       {children}

@@ -6,7 +6,8 @@ import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "../styles/mini-player.css";
 
 export default function MiniPlayer({ isVisible }) {
-  const { isPlaying, togglePlayPause, currentTime, duration, seek } =
+  // Destructure currentTrack from useAudio
+  const { isPlaying, togglePlayPause, currentTime, duration, seek, currentTrack } =
     useAudio();
 
   return (
@@ -15,7 +16,8 @@ export default function MiniPlayer({ isVisible }) {
         <div className="mini-player-content">
           <div className="mini-player-info">
             <h3 className="mini-player-title">Leo Cosh</h3>
-            <p>Professional Voice Actor</p>
+            {/* Renders the current track title dynamically with a fallback */}
+            <p>{currentTrack?.title || currentTrack?.name || "No Track Selected"}</p>
           </div>
 
           <button

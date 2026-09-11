@@ -1,118 +1,202 @@
+/* Root fallback variables in case any are missing */
+:root {
+  --primary-light: #f8f9fa;
+  --primary-dark: #1a1a1a;
+  --primary-accent: #0066ff;
+  --secondary-accent: #0052cc;
+  --text-muted: #6c757d;
+  --card-bg: #ffffff;
+}
+
+/* Page Container */
 .main-container {
   background: var(--primary-light);
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
+  padding: 32px 20px;
 }
 
+@media (min-width: 768px) {
+  .main-container {
+    padding: 48px 32px;
+  }
+}
+
+/* Main Layout Wrapper */
 .main-player {
-  width: 90%;
-  max-width: 700px;
-  margin: 48px auto;
-  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  /* Modern clean font stack */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Player card */
-.main-player-card {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+@media (min-width: 768px) {
+  .main-player {
+    max-width: 860px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-player {
+    max-width: 1080px;
+  }
+}
+
+/* Grid Layout */
+.players-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
   width: 100%;
-  box-sizing: border-box;
 }
 
-/* Main player heading - centered everywhere */
+@media (min-width: 768px) {
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Main Player Heading */
 .main-player-heading {
   width: 100%;
-  max-width: 90%;
   text-align: center;
   margin-bottom: 32px;
 }
 
 .main-player-heading h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  letter-spacing: -1px;
-  font-weight: 600;
-  color: #222;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--primary-dark);
   margin: 0;
 }
 
 .main-player-heading p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.5;
-  color: #666;
-  margin: 4px 0 0 0;
+  color: var(--text-muted);
+  margin: 8px 0 0 0;
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {
   .main-player-heading h1 {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 
   .main-player-heading p {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* Player Card Component */
+.main-player-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  /* Multi-layered soft ambient shadow */
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.03),
+    0 10px 24px -4px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.main-player-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 10px -1px rgba(0, 0, 0, 0.04),
+    0 16px 32px -4px rgba(0, 0, 0, 0.12);
+}
+
+/* Artwork Wrapper */
+.main-player-artwork {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--primary-light);
+}
+
+@media (min-width: 768px) {
+  .main-player-artwork {
+    height: 220px;
   }
 }
 
 @media (min-width: 1200px) {
-  .main-player-heading h1 {
-    font-size: 3.5rem;
+  .main-player-artwork {
+    height: 250px;
   }
-
-  .main-player-heading p {
-    font-size: 1.6rem;
-  }
-}
-
-/* Artwork */
-.main-player-artwork {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  margin-bottom: 32px;
-  overflow: hidden;
-  border-radius: 12px;
 }
 
 .main-player-artwork img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Track info inside card - left aligned on mobile, centered on tablets+ */
+.main-player-card:hover .main-player-artwork img {
+  transform: scale(1.03);
+  /* Subtle premium zoom on card hover */
+}
+
+/* Track Info */
 .main-player-info {
-  margin-bottom: 24px;
-  text-align: left;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .main-player-info {
-    text-align: center;
-  }
+.main-player-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--primary-dark);
+  margin: 0 0 4px 0;
 }
 
-/* Progress bar */
+.main-player-description {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Progress Section */
 .main-player-progress {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+  margin-top: auto;
+  /* Pushes controls consistently to bottom */
 }
 
-/* Controls */
+/* Controls Container */
 .main-player-controls {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 24px;
+  padding-top: 4px;
 }
 
-/* Buttons - previous/next icons */
+/* Standard Control Buttons */
 .control-button {
   background: transparent;
   border: none;
@@ -120,43 +204,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  transition: all 0.2s ease;
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.control-button:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: scale(1.08);
+}
+
+.control-button:active {
+  transform: scale(0.95);
+}
+
+/* Icon Styles */
+.player-icon {
+  font-size: 22px;
+  color: var(--primary-dark);
+  transition: color 0.15s ease;
 }
 
 .control-button:hover .player-icon {
   color: var(--primary-accent);
 }
 
-/* Play button with circle */
+/* Main Play Button */
 .play-button {
   background: var(--primary-accent);
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
 .play-button:hover {
   background: var(--secondary-accent);
-  transform: scale(1.05);
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
 }
 
-/* Font Awesome icons */
-.player-icon {
-  font-size: 28px;
-  color: var(--primary-dark);
-  /* black for prev/next */
+.play-button:active {
+  transform: scale(0.96);
 }
 
-/* Play button icon */
 .play-button .player-icon {
-  font-size: 32px;
-  color: white;
-  /* white inside green circle */
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: 2px;
+  /* Visual center adjustment for play triangle */
 }

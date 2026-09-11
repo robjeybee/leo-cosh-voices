@@ -9,6 +9,20 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 
+// Define your audio tracks array
+const tracks = [
+  {
+    title: "Commercial Demo (2025)",
+    description: "Voice Over Demo Reel",
+    src: "/Assets/Leo Cosh Commercial Demo 2025.mp3",
+  },
+  {
+    title: "Showreel (2025)",
+    description: "Voice Acting & Commercial Reel",
+    src: "/Assets/Leo Cosh Showreel_2025.mp3",
+  },
+];
+
 function App() {
   const mainPlayerRef = useRef(null);
   const [mainPlayerVisible, setMainPlayerVisible] = useState(true);
@@ -32,8 +46,8 @@ function App() {
   }, []);
 
   return (
-    // Wrap everything in AudioProvider so players share the same audio
-    <AudioProvider src="/Assets/Leo Cosh Commercial Demo 2025.mp3">
+    // Pass the tracks array instead of a single src string
+    <AudioProvider tracks={tracks}>
       <div ref={mainPlayerRef}>
         <MainPlayer />
       </div>
