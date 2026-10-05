@@ -18,7 +18,7 @@ const tracks = [
   },
   {
     title: "Showreel (2025)",
-    description: "Voice Acting & Commercial Reel",
+    description: "Gaming & Audioplay Reel",
     src: "/Assets/Leo Cosh Showreel_2025.mp3",
   },
 ];
